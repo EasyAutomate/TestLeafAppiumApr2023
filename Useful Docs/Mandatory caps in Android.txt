@@ -1,0 +1,18 @@
+Appium
+
+Mandatory caps if APK file is available
+
+platformName --> Android
+deviceName --> Any (Android)
+app --> Absolute Path of my apk in my local machine
+
+Mandatory caps if APK file is not available
+
+platformName --> Android
+deviceName --> Any (Android)
+appPackage --> Package name / App name given by developer
+appActivity --> Screen name where I should land
+
+Mandatory caps to start the emulator while script begins
+
+avd --> Device name (exact match) of my emulator --> Spaces should be replaced with _ (under score)

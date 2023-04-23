@@ -1,0 +1,18 @@
+1. Settings --> About phone
+2. Tap build number --> 7 times (Changes for custom OS)
+3. Settings --> Developer options --> USB debugging --> ON
+4. Settings --> Developer options --> Default USB configuration --> MIDI / MTP Protocol
+5. Connect the device with laptop/Desktop
+6. Authorize the USB debugging popup in device 
+7. Navigate to cmd prompt --> adb devices 
+8. Ensure device is listed --> <udid> device
+
+Challenges
+1. Till step 5 is success but USB debugging popup is not displayed 
+	Solution 1: Disconnect and connect the USB cable. Ensure Default USB configuration --> MIDI
+	Solution 2: File Explorer --> Right click --> Manage --> Device Manager --> Ensure ADB drivers are installed.
+	Solution 3: Change USB cable with proper one
+	Solution 4: ADB driver are not installed --> Download the drivers and then check it
+	Solution 5: Disconnect usb cable --> cmd prompt --> adb kill-server and adb start-server --> Connect the usb cable
+
+		

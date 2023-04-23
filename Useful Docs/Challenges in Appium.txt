@@ -1,0 +1,54 @@
+Challenges
+1. Hybrid Native --> Release/Production build cannot be tested
+2. In most of the cases (Native app/Hybrid Native app --> Native view) we would be using XPATH as the locator since most of the app would be built earlier before we start the automation. So we need be careful in writing the XPATH. Note: Never use the index option as it changes based on the screen size. Try to use other option to write your XPATH eg. with text, preceding, following etc.
+3. If Appium version is lower, there are chances of failure in latest OS devices --> Always have Android SDK, Build tools , Appium to the latest version
+4. Port no of the Server, Client, Bootstrap.jar installed in device are default if it is not explicitly mentioned
+5. Socket Hangup error is thrown if any of the port is not responding 
+	1. Close the app by code everytime
+	2. Wait for 60 sec (based on newCommandTimeout capability)
+	3. Delete the apps in Mobile (AUT, Appium Settings, UiAutomator Server, UiAutomator Client)
+	4. Kill the appium server and ADB and then start again
+6. App could not be installed in device due to below factors
+	1. Admin permission for Appium and ADB
+	2. If custom OS is installed, we need to enable setting in USB debugging
+7. When VDM is modified in code, Appium Server should be restarted and Server, Client, Bootstrap.jar installed in device should be uninstalled
+8. If the screenshot is disabled in App, Appium will not be able to identify the locators.
+    Option 1: We need to ask Dev team to provide a debug build to identify the locators.
+    Option 2: Print driver.getPageSource() contents in console. Identify the element manually and try in code. (Time consuming)
+9. If app is obfuscated then we might have challenges in identifying the locators. We might need to use XPATH for all the places eventhought id/name is provided by the dev team
+10. In case if we have added only "app" as part of desired caps, while trying to launch the app we may end up with error stating "Not a launchable activity"/"app permission denied". --> In that case add appPackage and appActivty along with the existing desired capabilities.
+11. During swipe, check if the starting co-ordinates are not overlapping with any other element. PointerInput, TouchAction will not throw any error on failure
+12. In case, if swipe is not working try to print the co-ordinates, validate the same in Appium inspector
+13. Toast/Capacha/Graph cannot be automated (Similar challenges of Selenium)
+14. While trying to launch with appPackage and appActivity we may end with Penmission denial error (org.openqa.selenium.SessionNotCreatedException) --> Use application Info.apk and find the right activity which has permission
+15. Failure for TouchAction, MultiTouchAction (more than 50% failure rates)
+16. In PointerInput for iOS, the button are being clicked when createPointerDown is called
+17. Scroll/swipe should be perform on element with scrollable attribute set as true
+18. autoGrantPermissions will always search for a element with id as button2. If found then it will click that element
+19. If object is created using AndroidDriver or IOSDriver then the platformName cap should not be provided in code
+20. If I switch the context the implicit wait duration is reset to 0
+21. isKeyboardShown will return false if the on screen keyboard is a numeric keyboard
+22. Appium can automate only visible portion of the screen
+23. activateApp method can fail if the appActivity in manifest doesnot have permission
+24. Phone should be connected via USB cable while perform Wi-Fi & Mobile Data on/off scenarios
+25. Physical keyboard actions like Keys.Enter will not be working in webview. In Android, native android keys layout is used
+26. GetContextHandles() will print the webview running in background as well
+27. Always try to switch to the right WEBVIEW since the GetContextHandles() returns Set<String>
+28. AppiumBy using Id and Name locators cannot be identified 
+29. Appium Inspector cannot click on overlapping element
+30. In older appium versions, switching between web app to native/hybrid app was not possible
+31. If session is created for Browser (Mobile Web), then we can switch to Native context only. WebView context will work only for Browser (Mobile Web)
+32. If session is created as an App (Native/Hybrid), then we can switch between Native, WebView in App , WebView in Mobile App
+33. While performing swipe using PointerInput in iOS, there are chances that element in start position gets clicked (may work sometimes)
+34. Swipe within webelement using pointer input might not work in PickerWheel of iOS (may work sometimes)
+35. While using selectPickerWheelValue in executeScript command, update the value based on the screen size else it would end up in multiple value swipe or next/previous element would not be selected.
+36. Webview value in iOS may change. So hardcoded value might not work
+37. In iOS, only the visible portion of screen can be used for WebView
+38. I need to view the screen for WebView automation
+39. For WebView in both platform, I cannot use cloud providers
+40. If noReset is set as true, then the app will not kill and restart for every session in iOS. Solution is to terminate and relaunch everytime
+41. In iOS, we need to use keyboard operation as NATIVE view only
+42. If the name of the finger is similar in PointerInput object creation, then multiple finger will not work
+
+
+	

@@ -1,0 +1,26 @@
+Interview
+1. Test Bed
+2. Types of Apps
+3. Framework built for Android and iOS
+4. Default OS version supported by Appium for Android and iOS
+5. Appium Workflow - Hybrid, Native, Mobile Web
+6. Vendor specific mechanism
+7. Which version of Appium support XCUITest and UiAutomator2
+8. Can I run iOS test cases from Windows/Linux client machine
+9. Why iOS test cases cannot run on Windows/Linux client machine
+10. Does nodes are manually connected in Appium
+11. Available locators
+12. Attribute name of the available locators
+13. Softwares to be installed for Android --> IDE, Java (JDK 8), Android Cmd line tools (Anroid studio preferred), Appium Server and Inspector
+14. ADB commands --> any command from the ADB cheat sheet
+15. abd devices --> possible options
+16. Mandatory caps in Android --> with apk file, with app already installed
+17. Can I skip the platformName capability in DC and create the session
+18. Scenario where the apk file might not be provided
+19. Default time duration for swipe recommended in Appium (600 ms)
+20. How many ways the swipe can be performed
+21. all methods in wrappers
+22. How to switch to multiple pages in web browser
+23. Difference between activateApp and driver.startActivity() methods
+24. driver.startActivity() is applicable for iOS
+25. Desired caps in Android

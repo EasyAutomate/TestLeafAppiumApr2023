@@ -1,0 +1,5 @@
+For Android version 9 and below
+adb shell "dumpsys window windows | grep -E mCurrentFocus"
+
+For Android versions 10 and above
+adb shell "dumpsys window displays | grep -E mCurrentFocus"
