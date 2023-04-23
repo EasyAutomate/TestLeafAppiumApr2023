@@ -1,6 +1,8 @@
 Challenges
 1. Hybrid Native --> Release/Production build cannot be tested
-2. In most of the cases (Native app/Hybrid Native app --> Native view) we would be using XPATH as the locator since most of the app would be built earlier before we start the automation. So we need be careful in writing the XPATH. Note: Never use the index option as it changes based on the screen size. Try to use other option to write your XPATH eg. with text, preceding, following etc.
+2. In most of the cases (Native app/Hybrid Native app --> Native view) we would be using XPATH as the locator
+since most of the app would be built earlier before we start the automation. So we need be careful in writing the XPATH.
+Note: Never use the index option as it changes based on the screen size. Try to use other option to write your XPATH eg. with text, preceding, following etc.
 3. If Appium version is lower, there are chances of failure in latest OS devices --> Always have Android SDK, Build tools , Appium to the latest version
 4. Port no of the Server, Client, Bootstrap.jar installed in device are default if it is not explicitly mentioned
 5. Socket Hangup error is thrown if any of the port is not responding 
@@ -15,15 +17,17 @@ Challenges
 8. If the screenshot is disabled in App, Appium will not be able to identify the locators.
     Option 1: We need to ask Dev team to provide a debug build to identify the locators.
     Option 2: Print driver.getPageSource() contents in console. Identify the element manually and try in code. (Time consuming)
-9. If app is obfuscated then we might have challenges in identifying the locators. We might need to use XPATH for all the places eventhought id/name is provided by the dev team
-10. In case if we have added only "app" as part of desired caps, while trying to launch the app we may end up with error stating "Not a launchable activity"/"app permission denied". --> In that case add appPackage and appActivty along with the existing desired capabilities.
+9. If app is obfuscated then we might have challenges in identifying the locators. We might need to use XPATH for all the places even-though id/name is provided by the dev team
+10. In case if we have added only "app" as part of desired caps, while trying to launch the app we may end up with error stating "Not a launchable activity"/"app permission denied".
+--> In that case add appPackage and appActivty along with the existing desired capabilities.
 11. During swipe, check if the starting co-ordinates are not overlapping with any other element. PointerInput, TouchAction will not throw any error on failure
 12. In case, if swipe is not working try to print the co-ordinates, validate the same in Appium inspector
 13. Toast/Capacha/Graph cannot be automated (Similar challenges of Selenium)
-14. While trying to launch with appPackage and appActivity we may end with Penmission denial error (org.openqa.selenium.SessionNotCreatedException) --> Use application Info.apk and find the right activity which has permission
+14. While trying to launch with appPackage and appActivity we may end with Permission denial error
+(org.openqa.selenium.SessionNotCreatedException) --> Use application Info.apk and find the right activity which has permission
 15. Failure for TouchAction, MultiTouchAction (more than 50% failure rates)
 16. In PointerInput for iOS, the button are being clicked when createPointerDown is called
-17. Scroll/swipe should be perform on element with scrollable attribute set as true
+17. Scroll/swipe should be performed on element with scrollable attribute set as true
 18. autoGrantPermissions will always search for a element with id as button2. If found then it will click that element
 19. If object is created using AndroidDriver or IOSDriver then the platformName cap should not be provided in code
 20. If I switch the context the implicit wait duration is reset to 0
