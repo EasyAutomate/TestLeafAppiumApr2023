@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ExtentReporter;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
 
-public class CommonNativeWrappers {
+public class CommonNativeWrappers extends ExtentReporter {
     public static final int MAX_SCROLL = 10;
     public AppiumDriver driver;
 
