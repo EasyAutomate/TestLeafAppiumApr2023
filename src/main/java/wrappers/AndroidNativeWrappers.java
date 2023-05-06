@@ -25,7 +25,7 @@ public class AndroidNativeWrappers extends CommonWebWrappers {
 
     public boolean startAnAppUsingActivity(String appPackage, String appActivity) {
         try {
-            ((StartsActivity) driver).startActivity(new Activity(appPackage, appActivity));
+            ((StartsActivity) getDriver()).startActivity(new Activity(appPackage, appActivity));
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -33,17 +33,17 @@ public class AndroidNativeWrappers extends CommonWebWrappers {
     }
 
     public boolean pressEnter() {
-        ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        ((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.ENTER));
         return true;
     }
 
     public boolean pressBack() {
-        ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.BACK));
+        ((PressesKey) getDriver()).pressKey(new KeyEvent(AndroidKey.BACK));
         return true;
     }
 
     public void showNotificationMenu() {
-        ((AndroidDriver) driver).openNotifications();
+        ((AndroidDriver) getDriver()).openNotifications();
     }
 
     public void hideNotificationMenu() {
@@ -51,23 +51,23 @@ public class AndroidNativeWrappers extends CommonWebWrappers {
     }
 
     public boolean dataOffInAndroid() {
-        ((HasNetworkConnection) driver).setConnection(new ConnectionStateBuilder().withWiFiDisabled().build());
-        ((HasNetworkConnection) driver).setConnection(new ConnectionStateBuilder().withDataDisabled().build());
+        ((HasNetworkConnection) getDriver()).setConnection(new ConnectionStateBuilder().withWiFiDisabled().build());
+        ((HasNetworkConnection) getDriver()).setConnection(new ConnectionStateBuilder().withDataDisabled().build());
         return true;
     }
 
     public boolean dataOnInAndroid() {
-        ((HasNetworkConnection) driver).setConnection(new ConnectionStateBuilder().withWiFiEnabled().build());
-        ((HasNetworkConnection) driver).setConnection(new ConnectionStateBuilder().withDataEnabled().build());
+        ((HasNetworkConnection) getDriver()).setConnection(new ConnectionStateBuilder().withWiFiEnabled().build());
+        ((HasNetworkConnection) getDriver()).setConnection(new ConnectionStateBuilder().withDataEnabled().build());
         return true;
     }
 
     public String getCurrentActivity() {
-        return ((StartsActivity) driver).currentActivity();
+        return ((StartsActivity) getDriver()).currentActivity();
     }
 
     public String getCurrentAppPackage() {
-        return ((StartsActivity) driver).getCurrentPackage();
+        return ((StartsActivity) getDriver()).getCurrentPackage();
     }
 
 }

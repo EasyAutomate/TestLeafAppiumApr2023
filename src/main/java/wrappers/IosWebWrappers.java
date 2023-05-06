@@ -37,8 +37,8 @@ public class IosWebWrappers extends IosNativeWrappers {
     }
 
     public void clickGivenKeyboardButtonInIosByName(String name) {
-        boolean isNative = ((SupportsContextSwitching) driver).getContext().equalsIgnoreCase("NATIVE_APP");
-        String context = ((SupportsContextSwitching) driver).getContext();
+        boolean isNative = ((SupportsContextSwitching) getDriver()).getContext().equalsIgnoreCase("NATIVE_APP");
+        String context = ((SupportsContextSwitching) getDriver()).getContext();
         if (!isNative) {
             switchNativeview();
         }
@@ -51,8 +51,8 @@ public class IosWebWrappers extends IosNativeWrappers {
     }
 
     public void clickGivenKeyboardButtonInIosByAccessibilityId(String accessId) {
-        boolean isNative = ((SupportsContextSwitching) driver).getContext().equalsIgnoreCase("NATIVE_APP");
-        String context = ((SupportsContextSwitching) driver).getContext();
+        boolean isNative = ((SupportsContextSwitching) getDriver()).getContext().equalsIgnoreCase("NATIVE_APP");
+        String context = ((SupportsContextSwitching) getDriver()).getContext();
         if (!isNative) {
             switchNativeview();
         }
@@ -65,8 +65,8 @@ public class IosWebWrappers extends IosNativeWrappers {
     }
 
     public void clickGivenKeyboardButtonInIosByXpath(String xPath) {
-        boolean isNative = ((SupportsContextSwitching) driver).getContext().equalsIgnoreCase("NATIVE_APP");
-        String context = ((SupportsContextSwitching) driver).getContext();
+        boolean isNative = ((SupportsContextSwitching) getDriver()).getContext().equalsIgnoreCase("NATIVE_APP");
+        String context = ((SupportsContextSwitching) getDriver()).getContext();
         if (!isNative) {
             switchNativeview();
         }
