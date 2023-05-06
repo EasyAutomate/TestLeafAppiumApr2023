@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class AndroidFirstCode1 {
+public class AndroidFirstScriptUsingAppPackageAndAppActivity {
     public static void main(String[] args) throws MalformedURLException {
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setCapability("platformName", "Android");

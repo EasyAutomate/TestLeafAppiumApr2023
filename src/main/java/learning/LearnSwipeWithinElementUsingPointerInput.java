@@ -11,7 +11,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class LearnSwipeWithinElementUsingPointerInput {
@@ -20,12 +19,12 @@ public class LearnSwipeWithinElementUsingPointerInput {
         DesiredCapabilities dc = new DesiredCapabilities();
 //        dc.setCapability("platformName", "Android");
         dc.setCapability("deviceName", "my emulator");
-        dc.setCapability("appPackage","com.android.vending");
-        dc.setCapability("appActivity","com.android.vending.AssetBrowserActivity");
+        dc.setCapability("appPackage", "com.android.vending");
+        dc.setCapability("appActivity", "com.android.vending.AssetBrowserActivity");
         dc.setCapability("noReset", true);
         AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), dc);
         int startX, startY, endX, endY;
-        int EendX,EstartX,EendY,EstartY;
+        int EendX, EstartX, EendY, EstartY;
         WebElement ele = driver.findElement(By.xpath("(//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View)[1]"));
         Rectangle rect = ele.getRect();
 //        EstartX = ele.getLocation().getX();
@@ -35,11 +34,11 @@ public class LearnSwipeWithinElementUsingPointerInput {
         EstartX = rect.getX();
         EstartY = rect.getY();
         EendX = rect.getWidth() + EstartX;
-        EendY = rect.getHeight() +EstartY;
-        startX = (int) (((EendX-EstartX)*0.5)+EstartX);
-        startY = (int) (((EendY-EstartY) *0.8)+EstartY);
-        endX = (int) (((EendX-EstartX)*0.5)+EstartX);
-        endY = (int) (((EendY-EstartY) *0.2)+EstartY);
+        EendY = rect.getHeight() + EstartY;
+        startX = (int) (((EendX - EstartX) * 0.5) + EstartX);
+        startY = (int) (((EendY - EstartY) * 0.8) + EstartY);
+        endX = (int) (((EendX - EstartX) * 0.5) + EstartX);
+        endY = (int) (((EendY - EstartY) * 0.2) + EstartY);
         System.out.println("performing swipe up...");
         PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger 1");
         Sequence seq = new Sequence(input, 1);
