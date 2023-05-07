@@ -1,0 +1,59 @@
+Page object model framework
+1. Every page should be a separate class
+2. Each page should extend the reusable method
+3. Every action should be a separate method inside a class
+4. Every method should have a return type and return to the page it lands post completion of the method
+5. Verify the page it has landed
+
+
+Maven
+src/main/java
+	pages
+		LoginPage.java extends GenericWrappers.java
+			public LoginPage() {
+			eleIsDisplayed(getWE(......));
+			}
+			public LoginPage enterUserName() {
+			return this;
+			}
+			public LoginPage enterPassword() {
+			return this;
+			}
+			public LoginPage clickLoginBtnF() {
+			return this;
+			}
+			public HomePage clickLoginBtn() {
+			return new HomePage();
+			}
+		HomePage.java extends GenericWrappers.java
+			public HomePage() {
+			eleIsDisplayed(getWE(......));
+			}
+	wrapper
+		GenericWrappers.java
+			public static AppiumDriver driver;
+src/main/resources
+src/test/java
+	testcases
+		TC001.java
+			public static void main(String[] args) {
+			GenericWrappers gm = new GenericWrappers();
+			gm.launchApp(.......);
+			new LoginPage()
+			.enterUserName()
+.enterPassword().clickLogin();
+			}
+src/test/resources
+
+
+
+
+
+
+
+
+
+
+
+
+

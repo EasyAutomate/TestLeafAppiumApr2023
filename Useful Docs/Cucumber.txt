@@ -1,0 +1,78 @@
+Manual testing
+Suite
+	Scenarios
+		Test cases
+			Test steps
+
+TestNG
+Suite
+	test
+		class
+			method
+
+Cucumber
+Project
+	Feature
+		Scenario
+			Steps
+
+
+Cucumber
+
+Feature file
+Scenario
+Steps 
+Steps def
+Automation library
+Test runner
+
+Gherkin
+
+Given - Pre-conditions
+When - Step to be execution
+Then - Expected result
+And - supporting keyword for all keywords
+But - Expected result - Negative scenario
+* - Wild card
+
+Maven
+
+src/main/java
+	wrappers
+		GenericWrappers.java
+	stepDef
+		StepDefinitions.java extends GenericWrappers.java
+		@Given("Application is launched successfully")
+		public void launch() {
+		launchApp();
+		}
+
+src/main/resources
+src/test/java
+	testRunner
+		TestRunner.java extends AbstractTestNGCucumberTests.java
+		@CucumberOptions(features={"src/test/resources/features/Login page.feature",glue="stepDef"}
+		public class TestRunner() {
+		}
+src/test/resources
+	features
+		Login page.feature
+			Feature: Scenario name say login
+			Scenario: Login success in app
+			Given Application is launched successfully
+			When I enter the username
+			And I enter the password
+			And I click on the login button
+			Then Verify Home page is displayed
+
+			
+
+
+
+
+
+
+
+
+
+
