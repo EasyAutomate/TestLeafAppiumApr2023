@@ -1,0 +1,19 @@
+Appium
+
+Mandatory caps if APP/IPA file is available
+
+platformName --> iOS
+deviceName --> Any (if UDID is provided) or Exact name is required if it is going to be an Simulator
+app --> Absolute Path of my app/ipa in my local machine
+automationName --> XCUITest
+For simulators alone --> platformVersion --> version of the device to test is added when multiple version of same device name is present in XCode
+For real device --> UDID --> Unique Device IDentifer is recommended
+
+Mandatory caps if APP/IPA file is not available
+
+platformName --> iOS
+deviceName --> Any (if UDID is provided) or Exact name is required if it is going to be an Simulator
+bundleId --> App bundle name provided by the developer (can be retrieved from Xcode or from the dev team)
+automationName --> XCUITest
+For simulators alone --> platformVersion --> version of the device to test is added when multiple version of same device name is present in XCode
+For real device --> UDID --> Unique Device IDentifer is recommended

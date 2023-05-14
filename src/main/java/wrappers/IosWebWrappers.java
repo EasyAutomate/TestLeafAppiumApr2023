@@ -43,7 +43,7 @@ public class IosWebWrappers extends IosNativeWrappers {
             switchNativeview();
         }
         if (isKeyboardShown()) {
-            click(getWebElement(Locators.NAME.toString(), name));
+            click(getWebElement(Locators.NAME.asString(), name));
         }
         if (!isNative) {
             switchContext(context);
@@ -57,7 +57,7 @@ public class IosWebWrappers extends IosNativeWrappers {
             switchNativeview();
         }
         if (isKeyboardShown()) {
-            click(getWebElement(Locators.ACCESSIBILITY_ID.toString(), accessId));
+            click(getWebElement(Locators.ACCESSIBILITY_ID.asString(), accessId));
         }
         if (!isNative) {
             switchContext(context);
@@ -71,7 +71,7 @@ public class IosWebWrappers extends IosNativeWrappers {
             switchNativeview();
         }
         if (isKeyboardShown()) {
-            click(getWebElement(Locators.XPATH.toString(), xPath));
+            click(getWebElement(Locators.XPATH.asString(), xPath));
         }
         if (!isNative) {
             switchContext(context);

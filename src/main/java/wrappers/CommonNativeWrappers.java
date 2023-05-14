@@ -160,8 +160,8 @@ public class CommonNativeWrappers {
         try {
             switch (locator) {
                 case "id":
-                    return driver.findElement(AppiumBy.id(locValue));
-//				return driver.findElement(AppiumBy.xpath("//*[@id='" + locValue + "']"));
+//                    return driver.findElement(AppiumBy.id(locValue));
+				return driver.findElement(AppiumBy.xpath("//*[@id='" + locValue + "']"));
                 case "name":
 //					return driver.findElement(AppiumBy.name(locValue));
                     return driver.findElement(AppiumBy.xpath("//*[@name='" + locValue + "']"));
@@ -239,6 +239,17 @@ public class CommonNativeWrappers {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    // To tap in application
+    public void tap(int x, int y) {
+        PointerInput finger = new PointerInput(Kind.TOUCH, "finger");
+        Sequence tap = new Sequence(finger, 1);
+        tap.addAction(finger.createPointerMove(Duration.ZERO, Origin.viewport(), x, y));
+        tap.addAction(finger.createPointerDown(MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(100)));
+        tap.addAction(finger.createPointerUp(MouseButton.LEFT.asArg()));
+        driver.perform(Collections.singletonList(tap));
     }
 
     // To double tap in application
